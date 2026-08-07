@@ -12,11 +12,11 @@ def start(message):
     text = """Привет! я бот для заказов.
 
 Доступные команды:
-/add <> - добавить цытату
-/quote_random - рандомная цытата
-/delete <id> - удалить цытату
-/get_quote <id> - получить цытату по id
-/get_quotes  - получить цытаты"""
+/add <> - добавить цитату
+/quote_random - рандомная цитата
+/delete <id> - удалить цитату
+/get_quote <id> - получить цитату по id
+/get_quotes  - получить цитаты"""
 
     bot.reply_to(message, text)
 
@@ -34,7 +34,7 @@ def quote_random(message):
         else:
             bot.reply_to(message, "ошибка сервера")
             return
-        text = "рандомная цытата\n"
+        text = "рандомная цитата\n"
         text += f"id - {result['Id']}\n text - {result['Text']}\n author - {result['Author']}\n Created_at - {result['Created_at']}\n"
         print(text)
         bot.reply_to(message, text)
@@ -54,7 +54,7 @@ def get_quotes(message):
         else:
             bot.reply_to(message, "ошибка сервера")
             return
-        text = "список цытат:\n"
+        text = "список цитат:\n"
         for r in result:
             text += f"id - {r['Id']}\n text - {r['Text']}\n author - {r['Author']}\n Created_at - {r['Created_at']}\n"
             print(text)
@@ -85,7 +85,7 @@ def get_quote(message):
         else:
             bot.reply_to(message, "ошибка сервера")
             return
-        text = "цытата:\n"
+        text = "цитата:\n"
         text += f"id - {result['Id']}\n text - {result['Text']}\n author - {result['Author']}\n Created_at - {result['Created_at']}\n"
         print(text)
         bot.reply_to(message, text)
@@ -122,7 +122,7 @@ def add(message):
             return
         response = requests.get(f"{SERVER_URL}/quote?text={parts[1]}&author={parts[2]}")
         if response.status_code == 200:
-            bot.reply_to(message, "success! quote added")
+            bot.reply_to(message, "Успешно! цитата добавлена")
         else:
             bot.reply_to(message, "ошибка сервера")
             return
