@@ -57,8 +57,8 @@ def get_quotes(message):
         text = "список цитат:\n"
         for r in result:
             text += f"id - {r['Id']}\n text - {r['Text']}\n author - {r['Author']}\n Created_at - {r['Created_at']}\n"
-            print(text)
-            bot.reply_to(message, text)
+        print(text)
+        bot.reply_to(message, text)
     except Exception as e:
         bot.reply_to(message, e)
 
