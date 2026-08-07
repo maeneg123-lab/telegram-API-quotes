@@ -12,7 +12,7 @@ def start(message):
     text = """Привет! я бот для заказов.
 
 Доступные команды:
-/add <> - добавить цитату
+/add /текст цитаты/автор цытаты- добавить цитату
 /quote_random - рандомная цитата
 /delete <id> - удалить цитату
 /get_quote <id> - получить цитату по id
@@ -116,7 +116,7 @@ def get_quote(message):
 @bot.message_handler(commands=['add'])
 def add(message):
     try:
-        parts = message.text.split()
+        parts = message.text.split("/")
         if len(parts) < 3:
             bot.reply_to(message, "error, data not found")
             return
