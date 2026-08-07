@@ -120,7 +120,7 @@ def add(message):
         if len(parts) < 3:
             bot.reply_to(message, "error, data not found")
             return
-        response = requests.get(f"{SERVER_URL}/quote?text={parts[2]}&author={parts[3]}")
+        response = requests.get(f"{SERVER_URL}/quote?text={parts[4]}&author={parts[6]}")
         if response.status_code == 200:
             bot.reply_to(message, "Успешно! цитата добавлена")
         else:
