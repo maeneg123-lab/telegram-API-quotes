@@ -9,7 +9,7 @@ SERVER_URL = "https://server-for-quotes-bot-production.up.railway.app"
 
 @bot.message_handler(commands=['start'])  # стартовая команда
 def start(message):
-    text = """Привет! я бот для заказов.
+    text = """Привет! я бот для цитат.
 
 Доступные команды:
 /add /текст цитаты/автор цытаты- добавить цитату
