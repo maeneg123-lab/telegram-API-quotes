@@ -8,6 +8,8 @@ TOKEN = os.getenv("BOT_TOKEN")
 bot = telebot.TeleBot(TOKEN)
 SERVER_URL = "https://server-for-quotes-bot-production.up.railway.app"
 
+print(f"Токен: [{TOKEN}]")  # ← Добавь эту строку
+print(f"Длина токена: {len(TOKEN)}")  # ← И эту
 
 if not TOKEN:
     raise ValueError("Токен не найден! Проверь .env файл.")
