@@ -9,6 +9,10 @@ bot = telebot.TeleBot(TOKEN)
 SERVER_URL = "https://server-for-quotes-bot-production.up.railway.app"
 
 
+if not TOKEN:
+    raise ValueError("Токен не найден! Проверь .env файл.")
+
+
 @bot.message_handler(commands=['start'])  # стартовая команда
 def start(message):
     text = """Привет! я бот для цитат.
