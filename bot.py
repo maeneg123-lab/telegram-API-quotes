@@ -2,7 +2,7 @@ import telebot
 import requests
 from datetime import datetime
 
-TOKEN = "8700402265:AAEs8qrNeP9W3weg_1MpQSeEHzZOrL33yL0"
+TOKEN = os.getenv("BOT_TOKEN")
 bot = telebot.TeleBot(TOKEN)
 SERVER_URL = "https://server-for-quotes-bot-production.up.railway.app"
 
